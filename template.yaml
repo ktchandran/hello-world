@@ -14,6 +14,7 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
+      Role: arn:aws:iam::091021251638:role/sam-lambda-access
       PackageType: Image
       ImageUri: 091021251638.dkr.ecr.us-east-1.amazonaws.com/helloworld
       Events:
