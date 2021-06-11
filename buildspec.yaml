@@ -9,6 +9,8 @@ phases:
       #Build spec reference
       #https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
       # Package SAM template
+      ls
+      sam build
       - sam package -t ./.aws-sam/build/template.yaml --s3-bucket aws-sam-cli-managed-default-samclisourcebucket-1dl2049ju1h24  --image-repository 091021251638.dkr.ecr.us-east-1.amazonaws.com/helloworld --output-template-file packaged.yaml
       # Deploy packaged SAM template
       - aws cloudformation deploy --template-file /Users/chandran.thangavel/repo/codecommit/hello-world-img/packaged.yaml --stack-name hello-world-img --capabilities CAPABILITY_IAM
